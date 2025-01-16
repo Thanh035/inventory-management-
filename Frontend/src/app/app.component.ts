@@ -9,8 +9,6 @@ import { faLeaf } from '@fortawesome/free-solid-svg-icons';
 export class AppComponent {
   isAdmin: boolean = false;
 
-  isWeb: boolean = false;
-
   login: boolean = false;
 
   constructor(private router: Router) {
@@ -21,8 +19,6 @@ export class AppComponent {
           this.isAdmin = true;
         } else if(event.url.startsWith('/login'))  {
           this.login = true;
-        } else {
-          this.isWeb = true;
         }
       }
     });

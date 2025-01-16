@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
-import { PasswordService } from 'src/app/account/password/password.service';
+// import { PasswordService } from 'src/app/account/password/password.service';
 import { Account } from 'src/app/core/auth/account.model';
 import { AccountService } from 'src/app/core/auth/account.service';
 
@@ -28,7 +28,7 @@ export class ChangePasswordComponent implements OnInit {
   });
 
   constructor(
-    private passwordService: PasswordService,
+    // private passwordService: PasswordService,
     private accountService: AccountService,
     private activeModal: NgbActiveModal
   ) {}
@@ -46,13 +46,13 @@ export class ChangePasswordComponent implements OnInit {
     if (newPassword !== confirmPassword) {
       this.doNotMatch = true;
     } else {
-      this.passwordService.save(newPassword, currentPassword).subscribe({
-        next: () => {
-          (this.success = true),
-          this.activeModal.close('success')
-        },
-        error: () => (this.error = true),
-      });
+      // this.passwordService.save(newPassword, currentPassword).subscribe({
+      //   next: () => {
+      //     (this.success = true),
+      //     this.activeModal.close('success')
+      //   },
+      //   error: () => (this.error = true),
+      // });
     }
   }
 

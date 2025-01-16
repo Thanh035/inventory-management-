@@ -23,7 +23,7 @@ public class GroupService {
 	private final GroupDTOMapper groupDTOMapper;
 
 	@Transactional(readOnly = true)
-	public Page<GroupDTO> getAllManagedRoles(Pageable pageable) {
+	public Page<GroupDTO> getAllGroups(Pageable pageable) {
 		return groupRepository.findAll(pageable).map(groupDTOMapper);
 	}
 
