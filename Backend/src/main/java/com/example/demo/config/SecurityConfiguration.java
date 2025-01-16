@@ -69,8 +69,11 @@ public class SecurityConfiguration {
 								.requestMatchers(mvc.pattern("/api/v1.0/account/reset-password/init")).permitAll()
 								.requestMatchers(mvc.pattern("/api/v1.0/account/reset-password/finish")).permitAll()
 								.requestMatchers(mvc.pattern("/api/v1.0/admin/**")).hasAuthority(RolesConstants.ADMIN)
-								.requestMatchers(mvc.pattern("/api/v1.0/**")).authenticated()
-								.requestMatchers(mvc.pattern("/v1.0/api-docs/**")).hasAuthority(RolesConstants.ADMIN)
+
+								.requestMatchers(mvc.pattern("/api/admin/**")).hasAuthority(RolesConstants.ADMIN)
+
+								.requestMatchers(mvc.pattern("/api/**")).authenticated()
+								.requestMatchers(mvc.pattern("/v3/api-docs/**")).hasAuthority(RolesConstants.ADMIN)
 								.requestMatchers(mvc.pattern("/management/health")).permitAll()
 								.requestMatchers(mvc.pattern("/management/health/**")).permitAll()
 								.requestMatchers(mvc.pattern("/management/info")).permitAll()

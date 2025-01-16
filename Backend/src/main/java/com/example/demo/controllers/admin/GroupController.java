@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1.0/admin/groups")
+@RequestMapping("/api/admin/groups")
 @RequiredArgsConstructor
 @Slf4j
 public class GroupController {
@@ -24,9 +24,9 @@ public class GroupController {
 
     @GetMapping
     @PreAuthorize("hasAuthority(\"" + RolesConstants.ADMIN + "\")")
-    public List<GroupDTO> getAllRoles(@org.springdoc.api.annotations.ParameterObject Pageable pageable) {
-        log.debug("REST request to get all Collection for an admin");
-        Page<GroupDTO> page = groupService.getAllManagedRoles(pageable);
+    public List<GroupDTO> getAllGroups(@org.springdoc.api.annotations.ParameterObject Pageable pageable) {
+        log.debug("REST request to get all Groups for an admin");
+        Page<GroupDTO> page = groupService.getAllGroups(pageable);
         return page.getContent();
     }
 

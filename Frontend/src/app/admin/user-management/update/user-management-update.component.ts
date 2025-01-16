@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserManagementService } from '../service/user-management.service';
 import { ActivatedRoute } from '@angular/router';
 import { IUser, User, UserUpdateDTO } from '../user-management.model';
-import { PasswordResetInitService } from 'src/app/account/password-reset/init/password-reset-init.service';
+// import { PasswordResetInitService } from 'src/app/account/password-reset/init/password-reset-init.service';
 
 const userTemplate = {} as UserUpdateDTO;
 
@@ -37,7 +37,7 @@ export class UserManagementUpdateComponent {
   constructor(
     private userService: UserManagementService,
     private route: ActivatedRoute,
-    private passwordResetInitService: PasswordResetInitService,
+    // private passwordResetInitService: PasswordResetInitService,
   ) {}
 
   ngOnInit(): void {
@@ -67,9 +67,9 @@ export class UserManagementUpdateComponent {
   success = false;
 
   requestReset(): void {
-    if(this.user?.email) {
-      this.passwordResetInitService.save(this.user.email).subscribe(() => (this.success = true));
-    }
+    // if(this.user?.email) {
+    //   this.passwordResetInitService.save(this.user.email).subscribe(() => (this.success = true));
+    // }
   }
 
   private onSaveSuccess(): void {
